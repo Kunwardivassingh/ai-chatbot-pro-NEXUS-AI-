@@ -99,19 +99,23 @@ const ChatPage = () => {
         speak(aiMessage.text);
       }
       
-      // Update the conversation with the AI's message
-      const conversationsWithAiMessage = conversations.map(c => {
-        if (c.id === activeConversationId) {
-           // Find the existing conversation and add the new message to it
-           const updatedMessages = [...c.messages, userMessage, aiMessage];
-           return { ...c, messages: updatedMessages };
-        }
-        return c;
-      });
-      // This part was buggy before. We need to refetch to get the correct order.
-      // A more advanced solution uses websockets, but refetching is the simplest fix.
-      const freshConversations = await getConversations();
-      setConversations(freshConversations.data);
+      // // Update the conversation with the AI's message
+      // const conversationsWithAiMessage = conversations.map(c => {
+      //   if (c.id === activeConversationId) {
+      //      // Find the existing conversation and add the new message to it
+      //      const updatedMessages = [...c.messages, userMessage, aiMessage];
+      //      return { ...c, messages: updatedMessages };
+      //   }
+      //   return c;
+      // });
+      // // This part was buggy before. We need to refetch to get the correct order.
+      // // A more advanced solution uses websockets, but refetching is the simplest fix.
+      // const freshConversations = await getConversations();
+      // setConversations(freshConversations.data);
+
+      // A simple refetch is the easiest and most reliable way to update the UI
+const freshConversations = await getConversations();
+setConversations(freshConversations.data);
 
     } catch (error) {
       console.error("Failed to send message:", error);
