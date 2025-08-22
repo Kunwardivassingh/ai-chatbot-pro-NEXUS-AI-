@@ -11,3 +11,4 @@ google-generativeai
 httpx
 email-validator
 python-multipart
+bcrypt
