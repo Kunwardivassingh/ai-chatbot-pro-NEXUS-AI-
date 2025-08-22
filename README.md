@@ -126,10 +126,15 @@ The project is organized with a main project folder containing two main director
 
 ai-chatbot-pro/
 ├── backend/
-│   ├── alembic/            # Database migration scripts
-│   │   └── versions/
-│   │       ├── ... (migration files like 0d2041ccf0a5_create_users_table.py)
-│   ├── app/                # Main Python application source code
+│   ├── alembic/
+│   │   ├── versions/
+│   │   │   ├── 0d2041ccf0a5_create_users_table.py
+│   │   │   ├── 1ca7a923d3ae_create_conversation_and_message_tables.py
+│   │   │   └── a861f5ed1947_add_full_name_to_users_table.py
+│   │   ├── env.py
+│   │   ├── README
+│   │   └── script.py.mako
+│   ├── app/
 │   │   ├── api/
 │   │   │   └── endpoints/
 │   │   │       ├── auth.py
@@ -153,14 +158,14 @@ ai-chatbot-pro/
 │   │   ├── services/
 │   │   │   ├── chat_service.py
 │   │   │   └── user_service.py
-│   │   └── main.py         # FastAPI application entry point
-│   ├── .env                # Your secret keys and database URL
-│   └── alembic.ini         # Alembic configuration
+│   │   └── main.py
+│   ├── .env
+│   └── alembic.ini
 │
 └── frontend/
     ├── public/
     │   └── vite.svg
-    ├── src/                # Main React application source code
+    ├── src/
     │   ├── assets/
     │   │   └── react.svg
     │   ├── components/
@@ -172,21 +177,25 @@ ai-chatbot-pro/
     │   ├── hooks/
     │   │   └── useTextToSpeech.ts
     │   ├── pages/
+    │   │   ├── Auth.module.css
     │   │   ├── AuthLayout.tsx
     │   │   ├── ChatPage.tsx
     │   │   ├── LoginPage.tsx
     │   │   ├── RegisterPage.tsx
+    │   │   ├── SettingsPage.module.css
     │   │   └── SettingsPage.tsx
     │   ├── services/
     │   │   ├── authService.ts
     │   │   └── chatService.ts
     │   ├── App.css
-    │   ├── App.tsx         # Main application router
+    │   ├── App.tsx
     │   ├── index.css
-    │   └── main.tsx        # React application entry point
-    └── ... (other frontend config files like package.json, vite.config.ts)
-
-
+    │   ├── main.tsx
+    │   └── vite-env.d.ts
+    ├── index.html
+    ├── package.json
+    ├── tsconfig.json
+    └── vite.config.ts
 
 ---
 
@@ -198,6 +207,6 @@ This project is licensed under the MIT License.
 
 ## 📧 Contact
 
-**Kunwardivassingh** - [your-email@example.com](mailto:your-email@example.com)
+**Kunwardivassingh** - [kunwardivasingh@gmail.com](mailto:kunwardivasingh@gmail.com)
 
 **Project Link**: [https://github.com/Kunwardivassingh/ai-chatbot-pro-NEXUS-AI-](https://github.com/Kunwardivassingh/ai-chatbot-pro-NEXUS-AI-)
