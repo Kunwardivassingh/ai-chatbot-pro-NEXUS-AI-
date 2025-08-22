@@ -40,7 +40,7 @@ const Sidebar = ({
       const token = localStorage.getItem('user_token');
       if (token) {
         try {
-          const response = await axios.get('http://127.0.0.1:8008/api/v1/users/me', {
+const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/users/me`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           setUser(response.data);
