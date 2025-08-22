@@ -1,4 +1,5 @@
-import { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
+
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Auth.module.css';
 import { register } from '../services/authService'; // Import our new function
@@ -24,10 +25,12 @@ const RegisterPage = () => {
       await register({ full_name: fullName, email, password });
       // If registration is successful, automatically navigate to the login page
       navigate('/login');
-    } catch (err: any) {
+    } catch (err: unknown) {
       // Handle errors from the backend (e.g., email already exists)
-      if (err.response && err.response.data && err.response.data.detail) {
-        setError(err.response.data.detail);
+      if (err && typeof err === 'object' && 'response' in err && 
+          err.response && typeof err.response === 'object' && 'data' in err.response &&
+          err.response.data && typeof err.response.data === 'object' && 'detail' in err.response.data) {
+        setError(err.response.data.detail as string);
       } else {
         setError("Registration failed. Please try again.");
       }

@@ -1,4 +1,5 @@
-import { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
+
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Auth.module.css';
 import { login } from '../services/authService'; // Import our new login function
