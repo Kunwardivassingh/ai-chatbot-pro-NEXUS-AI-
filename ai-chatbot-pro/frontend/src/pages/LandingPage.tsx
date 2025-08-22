@@ -3,7 +3,7 @@ import styles from './LandingPage.module.css';
 
 const LandingPage = () => {
   return (
-    <div className={styles.lpContainer}>
+    <div id="landingPageRoot" className={styles.lpContainer}>
       <main className={styles.lpMainContent}>
         <section className={styles.lpHero}>
           <h1 className={styles.lpTitle}>Welcome to Nexus AI</h1>

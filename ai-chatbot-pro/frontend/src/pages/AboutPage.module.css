@@ -1,4 +1,5 @@
 .apContainer {
+  all: unset; /* Prevent global CSS leaks */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,25 +8,37 @@
   padding-top: 84px; /* 64px navbar + 20px padding */
   background-color: #1c1c1e;
   color: #fff;
+  box-sizing: border-box;
+  padding-left: 300px;
+    padding-right: 100px;
 }
 
 .apContentCard {
+  all: unset;
+  display: block;
   max-width: 800px;
   width: 100%;
   background-color: #2c2c2e;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  box-sizing: border-box;
 }
 
 .apTitle {
+  all: unset;
+  display: block;
   font-size: 32px;
   font-weight: 600;
   text-align: center;
   margin-bottom: 30px;
+  color: #fff;
 }
 
 .apText {
+  all: unset;
+  display: block;
   font-size: 16px;
   line-height: 1.7;
   color: #aeaeb2;
@@ -33,20 +46,28 @@
 }
 
 .apTechSection {
+  all: unset;
+  display: block;
   margin-top: 40px;
   text-align: center;
+  color: #fff;
 }
 
 .apTechSection h2 {
+  all: unset;
+  display: block;
   font-size: 24px;
   margin-bottom: 20px;
+  font-weight: 600;
+  color: #fff;
 }
 
 .apTechSection ul {
-  list-style: none;
-  padding: 0;
+  all: unset;
   display: flex;
+  list-style: none;
   justify-content: center;
   gap: 30px;
   color: #8e8e93;
+  padding: 0;
 }

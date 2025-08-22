@@ -2,7 +2,7 @@ import styles from './ContactPage.module.css';
 
 const ContactPage = () => {
   return (
-    <div className={styles.cpContainer}>
+    <div id="contactPageRoot" className={styles.cpContainer}>
       <div className={styles.cpCard}>
         <h1 className={styles.cpTitle}>Get in Touch</h1>
         <p className={styles.cpSubtitle}>
