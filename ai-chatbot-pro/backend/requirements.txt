@@ -10,3 +10,4 @@ passlib[bcrypt]
 google-generativeai
 httpx
 email-validator
+python-multipart
