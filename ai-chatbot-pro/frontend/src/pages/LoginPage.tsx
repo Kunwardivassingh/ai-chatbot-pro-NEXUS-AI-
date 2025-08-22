@@ -1,8 +1,7 @@
 import { useState, type FormEvent } from 'react';
-
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Auth.module.css';
-import { login } from '../services/authService'; // Import our new login function
+import { login } from '../services/authService';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -17,11 +16,13 @@ const LoginPage = () => {
     try {
       await login({ email, password });
       // If login is successful, navigate to the main chat page
-      navigate('/'); 
+      navigate('/chat'); // UPDATED THIS LINE
       window.location.reload(); // Force a reload to update auth state
-    } catch (err: any) {
-      if (err.response && err.response.data && err.response.data.detail) {
-        setError(err.response.data.detail);
+    } catch (err: unknown) {
+      if (err && typeof err === 'object' && 'response' in err && 
+          err.response && typeof err.response === 'object' && 'data' in err.response &&
+          err.response.data && typeof err.response.data === 'object' && 'detail' in err.response.data) {
+        setError(err.response.data.detail as string);
       } else {
         setError("Login failed. Please check your credentials.");
       }

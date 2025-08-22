@@ -1,0 +1,103 @@
+.landingContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #1c1c1e;
+  color: #fff;
+  padding-top: 64px; /* Space for the fixed navbar */
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 40px 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #8e8e93;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.signupButton, .loginButton {
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.signupButton {
+  background-color: #007aff;
+  color: #fff;
+}
+
+.signupButton:hover {
+  background-color: #0056b3;
+}
+
+.loginButton {
+  background-color: #2c2c2e;
+  color: #fff;
+}
+
+.loginButton:hover {
+  background-color: #3a3a3c;
+}
+
+.features {
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.featureCard {
+  background-color: #2c2c2e;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.featureCard h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.featureCard p {
+  color: #aeaeb2;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #3a3a3c;
+  color: #8e8e93;
+}
