@@ -1,0 +1,62 @@
+.inputBarContainer {
+  display: flex;
+  padding: 10px 20px;
+  background-color: #343541; /* Match the chat window background */
+  border-top: 1px solid #4a4a4f;
+}
+
+.textInput {
+  flex-grow: 1;
+  border: 1px solid #555;
+  background-color: #40414f;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.textInput:focus {
+  border-color: #007aff;
+}
+
+.sendButton {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.sendButton:hover {
+  background-color: #0056b3;
+}
+/* ... (keep all existing styles) ... */
+
+.micButton {
+  background-color: #40414f;
+  color: #acacbe;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 10px;
+  margin-left: 10px;
+
+}
+
+.micButton:hover {
+  background-color: #555;
+}
+
+/* --- ADD THIS NEW STYLE --- */
+.micButton.listening {
+  background-color: #c82333; /* Red color when recording */
+  color: white;
+}
