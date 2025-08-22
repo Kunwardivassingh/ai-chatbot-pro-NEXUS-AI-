@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8008/api/v1/chat';
+const API_URL = `${import.meta.env.VITE_API_URL}/api/v1/chat`;
 
 // Helper function to get the auth token and create headers
 const getAuthHeaders = () => {
