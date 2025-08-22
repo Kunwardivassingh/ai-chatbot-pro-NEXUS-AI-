@@ -6,7 +6,7 @@ Nexus AI is an intelligent, full-stack conversational assistant built with a pow
 
 ## ✨ Live Demo
 
-***[[Add your live application link here!](https://nexus-ai-rb11.onrender.com)]***
+***[https://nexus-ai-rb11.onrender.com]***
 
 ![Nexus AI Screenshot](placeholder_for_your_screenshot_url.png)
 *(You can add a screenshot of your app here)*
