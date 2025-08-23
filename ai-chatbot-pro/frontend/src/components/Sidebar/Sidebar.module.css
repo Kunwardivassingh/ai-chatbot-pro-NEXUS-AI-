@@ -8,15 +8,13 @@
   padding: 12px;
   box-sizing: border-box;
   flex-shrink: 0;
-  /* --- ADD THESE STYLES FOR THE ANIMATION --- */
-  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
-  overflow: hidden; /* Hide content when collapsing */
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out, transform 0.3s ease-in-out;
+  overflow: hidden;
 }
 
-/* --- ADD THIS NEW STYLE BLOCK FOR THE COLLAPSED STATE --- */
 .sidebar.collapsed {
   width: 0;
-  padding: 12px 0; /* Remove horizontal padding when collapsed */
+  padding: 12px 0;
 }
 
 .topHeader {
@@ -25,7 +23,7 @@
   justify-content: space-between;
   padding: 8px;
   margin-bottom: 10px;
-  min-width: 230px; /* Prevent content from wrapping during collapse */
+  min-width: 230px;
 }
 
 .logo {
@@ -56,7 +54,7 @@
 
 .header {
   margin-bottom: 20px;
-  min-width: 230px; /* Prevent content from wrapping */
+  min-width: 230px;
 }
 
 .newChatButton {
@@ -82,7 +80,7 @@
 .history {
   flex-grow: 1;
   overflow-y: auto;
-  min-width: 230px; /* Prevent content from wrapping */
+  min-width: 230px;
 }
 
 .historyItem {
@@ -136,7 +134,7 @@
   border-top: 1px solid #3a3a3c;
   padding-top: 12px;
   position: relative;
-  min-width: 230px; /* Prevent content from wrapping */
+  min-width: 230px;
 }
 
 .userProfile {
@@ -185,7 +183,7 @@
   box-sizing: border-box;
 }
 
-.menuItem {
+.mmenuItem {
   padding: 10px 12px;
   border-radius: 6px;
   cursor: pointer;
@@ -194,4 +192,21 @@
 
 .menuItem:hover {
   background-color: #4a4a4f;
+}
+
+/* --- Responsive Mobile Styles --- */
+@media (max-width: 768px) {
+  .sidebar.mobile {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1100; /* Ensure it's above the chat window */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.mobile:not(.collapsed) {
+    transform: translateX(0);
+    width: 260px;
+  }
 }

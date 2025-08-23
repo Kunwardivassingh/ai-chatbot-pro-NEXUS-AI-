@@ -2,7 +2,8 @@
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px; /* Adjusted padding for mobile */
+  padding-top: 84px; /* Navbar height + padding */
   color: #fff;
 }
 
@@ -50,6 +51,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px; /* Add gap for spacing */
 }
 
 .optionDescription {
@@ -81,7 +83,7 @@
 }
 
 .actionButton {
-  width: auto;
+  width: 100%; /* Make buttons full-width on mobile */
   padding: 10px 16px;
   border: 1px solid #555;
   background-color: #3a3a3c;
@@ -89,7 +91,7 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
-  margin-right: 15px;
+  margin: 10px 0 0 0; /* Adjusted margin */
 }
 
 .actionButton.clearButton {
@@ -103,6 +105,7 @@
   display: inline-block;
   width: 50px;
   height: 28px;
+  flex-shrink: 0; /* Prevent switch from shrinking */
 }
 .switch input {
   opacity: 0;
@@ -136,4 +139,26 @@ input:checked + .slider {
 }
 input:checked + .slider:before {
   transform: translateX(22px);
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .option {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .option > div:last-child {
+    align-self: flex-end; /* Re-aligns the switch/buttons to the right */
+  }
+
+  .actionButton {
+    width: 100%;
+    margin-right: 0;
+  }
 }

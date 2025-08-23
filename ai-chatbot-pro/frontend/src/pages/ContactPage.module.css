@@ -1,67 +1,59 @@
 .cpContainer {
-  all: unset;
+  width: 100%;
+  max-width: 100%;
+  flex: 1 1 auto;
+  align-self: stretch;
+  min-width: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+
   padding: 40px 20px;
-  padding-top: 104px; /* 64px navbar + 40px padding */
+  padding-top: 104px; /* 64 navbar + 40 padding */
+  margin: 0 auto;
+
   background-color: #1c1c1e;
   color: #fff;
   box-sizing: border-box;
-  padding-left: 350px;
-    padding-right: 50px;
 }
 
 .cpCard {
-  all: unset;
-  display: block;
   max-width: 600px;
   width: 100%;
   background-color: #2c2c2e;
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   box-sizing: border-box;
 }
 
 .cpTitle {
-  all: unset;
-  display: block;
   font-size: 28px;
   font-weight: 600;
   text-align: center;
   margin-bottom: 10px;
-  color: #fff;
 }
 
 .cpSubtitle {
-  all: unset;
-  display: block;
   font-size: 16px;
   color: #8e8e93;
   text-align: center;
   margin-bottom: 30px;
 }
 
-.cpFormGroup {
-  all: unset;
-  display: block;
-  margin-bottom: 20px;
-}
+.cpFormGroup { margin-bottom: 20px; }
 
 .cpLabel {
-  all: unset;
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
   color: #aeaeb2;
 }
 
-.cpInput, .cpTextarea {
-  all: unset;
-  display: block;
+.cpInput,
+.cpTextarea {
   width: 100%;
   padding: 12px 16px;
   background-color: #3a3a3c;
@@ -70,23 +62,21 @@
   color: #fff;
   font-size: 16px;
   box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
   font-family: inherit;
 }
 
-.cpInput:focus, .cpTextarea:focus {
-  border-color: #007aff;
-}
+.cpInput:focus,
+.cpTextarea:focus { border-color: #007aff; }
 
-.cpTextarea {
-  resize: vertical;
-}
+.cpTextarea { resize: vertical; }
 
 .cpButton {
-  all: unset;
-  display: block;
   width: 100%;
   padding: 14px;
   background-color: #007aff;
+  border: none;
   border-radius: 8px;
   color: #fff;
   font-size: 16px;
@@ -96,6 +86,10 @@
   transition: background-color 0.2s;
 }
 
-.cpButton:hover {
-  background-color: #0056b3;
+.cpButton:hover { background-color: #0056b3; }
+.cpSuccessMessage {
+  margin-top: 20px;
+  color: #4cd964;
+  text-align: center;
+  font-weight: 500;
 }

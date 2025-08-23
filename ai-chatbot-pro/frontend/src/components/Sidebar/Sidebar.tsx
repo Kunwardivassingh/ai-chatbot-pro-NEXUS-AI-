@@ -9,10 +9,9 @@ interface User {
   email: string;
 }
 
-// --- THIS IS THE FIX ---
-// The props interface now correctly includes 'isOpen'
 interface SidebarProps {
   isOpen: boolean;
+  isMobile: boolean; // Add isMobile prop
   conversations: Conversation[];
   activeConversationId: number | null;
   onNewChat: () => void;
@@ -20,16 +19,16 @@ interface SidebarProps {
   onDeleteConversation: (id: number) => void;
   onToggleSidebar: () => void;
 }
-// --- END OF FIX ---
 
 const Sidebar = ({
-    isOpen,
+  isOpen,
+  isMobile,
   conversations,
   activeConversationId,
   onNewChat,
   onSelectConversation,
   onDeleteConversation,
-  onToggleSidebar // And correctly received here
+  onToggleSidebar
 }: SidebarProps) => {
   const [user, setUser] = useState<User | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,7 +39,7 @@ const Sidebar = ({
       const token = localStorage.getItem('user_token');
       if (token) {
         try {
-const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/users/me`, {
+          const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/users/me`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           setUser(response.data);
@@ -65,8 +64,10 @@ const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/users/m
     return names.length > 1 ? `${names[0][0]}${names[names.length - 1][0]}`.toUpperCase() : name.substring(0, 2).toUpperCase();
   };
 
+  const sidebarClasses = `${styles.sidebar} ${!isOpen ? styles.collapsed : ''} ${isMobile ? styles.mobile : ''}`;
+
   return (
- <div className={`${styles.sidebar} ${!isOpen ? styles.collapsed : ''}`}>
+    <div className={sidebarClasses}>
       <div className={styles.topHeader}>
         <div className={styles.logo}>
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#007AFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M2 17L12 22L22 17" stroke="#007AFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M2 12L12 17L22 12" stroke="#007AFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -109,8 +110,8 @@ const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/users/m
             <span className={styles.userName}>{user.full_name}</span>
             {menuOpen && (
               <div className={styles.menu}>
-                <div className={styles.menuItem} onClick={() => navigate('/settings')}>Settings</div>
-                <div className={styles.menuItem} onClick={handleLogout}>Log Out</div>
+                <div className={styles.mmenuItem} onClick={() => navigate('/settings')}>Settings</div>
+                <div className={styles.mmenuItem} onClick={handleLogout}>Log Out</div>
               </div>
             )}
           </div>
