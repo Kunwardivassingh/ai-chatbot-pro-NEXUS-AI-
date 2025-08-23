@@ -123,7 +123,7 @@ To get a local copy up and running, follow these simple steps.
 ## 📂 Project Structure
 
 The project is organized with a main project folder containing two main directories: `backend` and `frontend`.
-
+```
 ai-chatbot-pro/
 ├── backend/
 │   ├── alembic/
@@ -196,7 +196,7 @@ ai-chatbot-pro/
     ├── package.json
     ├── tsconfig.json
     └── vite.config.ts
-
+```
 ---
 
 ## 📜 License
