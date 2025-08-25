@@ -181,8 +181,8 @@ def get_db():
 genai.configure(api_key=settings.GEMINI_API_KEY)
 
 # combo setup: first try pro, if quota exceeded -> fallback to free
-MODEL_PRO = "gemini-1.5-pro-latest"
-MODEL_FREE = "gemini-1.5-flash-latest"
+MODEL_PRO = "gemini-2.5-flash-lite"
+MODEL_FREE = "gemini-2.0-flash-lite"
 model = genai.GenerativeModel(MODEL_PRO)
 
 # --- helper: get quota usage ---
